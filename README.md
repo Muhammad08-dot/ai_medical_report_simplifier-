@@ -1,5 +1,7 @@
 # ClearPath — Medical Report Simplifier & Grounding Agent
 
+![ClearPath Hero Banner](clearpath_hero.png)
+
 ClearPath is an AI-driven Next.js web application designed to translate complex clinical medical reports (such as blood tests and laboratory findings) into patient-friendly, plain language explanations.
 
 ## 📖 About
