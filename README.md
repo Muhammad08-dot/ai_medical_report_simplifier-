@@ -1,8 +1,13 @@
 # ClearPath — Medical Report Simplifier & Grounding Agent
 
-ClearPath is a premium, AI-driven Next.js web application designed to simplify complex clinical medical reports (such as blood tests and laboratory findings) into patient-friendly, plain language explanations. 
+ClearPath is an AI-driven Next.js web application designed to translate complex clinical medical reports (such as blood tests and laboratory findings) into patient-friendly, plain language explanations.
 
-The application utilizes an advanced **multi-agent orchestration workflow** backed by the Google Gemini API to extract test parameters, cross-validate findings against web-grounded clinical references, list terms in a glossary, and compile customized, downloadable reports in multiple formats.
+## 📖 About
+
+ClearPath serves as an intelligent medical report companion. When a user uploads a clinical lab report, the platform initiates a multi-agent pipeline:
+- **Extraction Agent**: Parses clinical parameters, values, and reference ranges using the Gemini API.
+- **RAG Grounding Agent**: Verifies laboratory results against web-grounded medical consensus and generates references without training datasets.
+- **Document Subagent**: Formats and packages the final report summary into downloadable PDF, Word, and PowerPoint formats.
 
 ---
 
