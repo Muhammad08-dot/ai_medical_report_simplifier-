@@ -27,17 +27,41 @@ The application utilizes an advanced **multi-agent orchestration workflow** back
 - **AI Integration**: Google Gemini API via official HTTP REST endpoints
 - **Document Exporters**: Vanilla Buffer compilation (coordinate PDF assembler & Office HTML/XML templates)
 
----
+## 📂 Project Structure
 
-## 📂 Project Architecture
-
-- `src/app/page.tsx`: The primary interactive UI dashboard and upload screen.
-- `src/app/api/reports/process/route.ts`: Endpoint processing uploaded reports via Gemini extraction and RAG verification.
-- `src/app/api/reports/[id]/download/route.ts`: Endpoint serving PDF, Word, and PowerPoint downloads after verification.
-- `src/lib/agents/document-agent.ts`: Specialized subagent handling document layout, conversion, and validation.
-- `src/lib/gemini.ts`: Core AI functions executing text extraction and formatting prompts.
-- `src/lib/firebase-admin.ts`: Local mock database emulator.
-- `db_data/`: Ignored folder storing serialized report JSON files locally.
+```text
+clearpath-medical-report-simplifier/
+├── db_data/                  # Local JSON files serving as the document storage database (Git ignored)
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── chat/
+│   │   │   │   └── route.ts  # Endpoint for chat interactions with reports
+│   │   │   ├── health/
+│   │   │   │   └── route.ts  # Health check endpoint
+│   │   │   └── reports/
+│   │   │       ├── [id]/
+│   │   │       │   └── download/
+│   │   │       │       └── route.ts  # Handles PDF, Word, & PPT generation requests
+│   │   │       └── process/
+│   │   │           └── route.ts      # Main pipeline processing clinical reports
+│   │   ├── globals.css        # Global CSS stylesheet & Tailwind setup
+│   │   ├── layout.tsx         # Main HTML envelope and font loader
+│   │   └── page.tsx           # Premium UI dashboard for uploading & viewing summaries
+│   ├── components/
+│   │   └── SiteAgentWidget.tsx # Floating support support-agent chat assistant
+│   └── lib/
+│       ├── agents/
+│       │   └── document-agent.ts # Formatting Subagent compiling PDFs, Word, & PPT exports
+│       ├── firebase-admin.ts  # Mock collection and document database emulator
+│       ├── gemini.ts          # Core Gemini API interaction & RAG orchestration logic
+│       ├── report-data.ts     # Schema definitions and mock data fallbacks
+│       └── report-record.ts   # Serialized document database record models
+├── .env.example               # Example env template
+├── .gitignore                 # Excludes build assets, local DBs, and API keys
+├── package.json               # Declares dependencies and scripts
+└── tsconfig.json              # TypeScript compilation setup
+```
 
 ---
 
