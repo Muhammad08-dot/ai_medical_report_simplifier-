@@ -31,6 +31,7 @@ ClearPath serves as an intelligent medical report companion. When a user uploads
 - **Core Framework**: [Next.js](https://nextjs.org/) (App Router, React 19, TypeScript)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (modern, curated slate/teal color palette)
 - **Icons**: [Lucide React](https://lucide.dev/)
+- **OCR Engine**: [Tesseract.js](https://tesseract.projectnaptha.com/) (for parsing and extracting text from image-based medical reports)
 - **AI Integration**: Google Gemini API via official HTTP REST endpoints
 - **Document Exporters**: Vanilla Buffer compilation (coordinate PDF assembler & Office HTML/XML templates)
 
